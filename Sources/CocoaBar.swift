@@ -556,6 +556,9 @@ public class CocoaBar: UIView, CocoaBarLayoutDelegate {
                             if let delegate = self.delegate {
                                 delegate.cocoaBar(self, didHideAnimated: animated)
                             }
+
+                            CocoaBar.keyCocoaBar = nil
+                            self.removeFromSuperview()
                         }
                     )
                 }
@@ -577,6 +580,9 @@ public class CocoaBar: UIView, CocoaBarLayoutDelegate {
                 if let delegate = self.delegate {
                     delegate.cocoaBar(self, didHideAnimated: animated)
                 }
+
+                CocoaBar.keyCocoaBar = nil
+                self.removeFromSuperview()
             }
         }
 
